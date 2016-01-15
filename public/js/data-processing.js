@@ -15,7 +15,6 @@ var UPPER_BACK_SENSOR_MAX = 0.4;
 
 socket.on('new message', function (data) {
 
-    console.log("Data received: ", data);
     instances += 1;
 
     var current_array = data.message.split(",");
@@ -28,9 +27,7 @@ socket.on('new message', function (data) {
     x1 = parseFloat(current_array[0+6]);
     y1 = parseFloat(current_array[1+6]);
     z1 = parseFloat(current_array[2+6]);
-    x2 = parseFloat(current_array[9]);
-    y2 = parseFloat(current_array[10]);
-    z2 = parseFloat(current_array[11]);
+    console.log("IMU data - x: ", x1, "y: ", y1, "z: ", z1);
 
     $("*").trigger("custom"); // for all on screen objects to receive their
 });
