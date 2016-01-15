@@ -7,6 +7,10 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var port = process.env.PORT || 3000;
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
 });
@@ -17,17 +21,14 @@ app.use(express.static(__dirname + '/public'));
 // Getting information from webhook
 var counter = 0;
 app.post('/brace', function (req, res) {
-  res.send('Thank you for the information for the ', counter, 'th time');
-  counter += 1;
-  console.log("A!", req);
-  console.log("B!", req.body);
-  console.log("C!", req.body.param);
-  console.log("D!", req.body.id);
-  console.log("E!", req.body.geo);
+  res.send(counter);
   io.emit('new message', {
     username: "The man himself",
     message: counter
   });
+  counter += 1;
+  // console.log("A!", req);
+  console.log("B!", req.body);
 });
 
 // usernames which are currently connected to the chat
