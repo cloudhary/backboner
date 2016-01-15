@@ -19,10 +19,14 @@ var counter = 0;
 app.post('/brace', function (req, res) {
   res.send('Thank you for the information for the ', counter, 'th time');
   counter += 1;
-  console.log("Something!", counter);
+  console.log("A!", req);
+  console.log("B!", req.body);
+  console.log("C!", req.body.param);
+  console.log("D!", req.body.id);
+  console.log("E!", req.body.geo);
   io.emit('new message', {
     username: "The man himself",
-    message: req.body
+    message: counter
   });
 });
 
