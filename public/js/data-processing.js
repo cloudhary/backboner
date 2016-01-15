@@ -27,8 +27,10 @@ socket.on('new message', function (data) {
     y1 = parseFloat(current_array[1+6]);
     z1 = parseFloat(current_array[2+6]);
 
-    var total_average_percentage = (lower1 + lower2 + upper1 + upper2 + 
-                                        shoulder_right + shoulder_left) / 3;
+    var total_average_percentage = Math.abs(upper1) + Math.abs(upper2)
+                     + Math.abs(lower1) + Math.abs(lower2)
+                     + Math.abs(shoulder_left) + Math.abs(shoulder_right);
+    total_average_percentage/=3;
     if (total_average_percentage < 0.03) {
         great += 1;
     } else if (total_average_percentage < 0.07) {
