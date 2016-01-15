@@ -27,7 +27,7 @@ app.post('/brace', function (req, res) {
     message: req.body.data
   });
   counter += 1;
-  console.log(req.body.data);
+  console.log("Nikhil", req.body.data);
 });
 
 // usernames which are currently connected to the chat
