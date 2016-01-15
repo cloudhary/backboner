@@ -3,11 +3,11 @@ var socket = io();
 var instances = 0;
 var x1, y1, z1, x2, y2, z2;
 var lower1, lower2, upper1, upper2, shoulder_left, shoulder_right;
-var SENSOR_MAX = 0.4;
-var SHOULDER_SENSOR_MAX = 0.4;
-var LOWER_BACK_SENSOR_MAX = 0.4;
-var UPPER_BACK_SENSOR_MAX = 0.4;
-
+var SENSOR_MAX = 0.15;
+var SHOULDER_SENSOR_MAX = 0.15;
+var LOWER_BACK_SENSOR_MAX = 0.15;
+var UPPER_BACK_SENSOR_MAX = 0.15;
+var great, good, meh, bad;
 // create function to calculate weighted average of a list of data
 // function getAvg(data, weights) {
 //     for 

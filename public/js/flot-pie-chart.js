@@ -3,16 +3,20 @@ $(function() {
 
     var data = [{
         label: "Great",
-        data: instances
+        data: instances,
+        color: "#a1d490"
     }, {
         label: "Good",
-        data: 3
+        data: 3,
+        color: "#acff47"
     }, {
         label: "Meh",
-        data: 9
+        data: 9,
+        color: "#faf798"
     }, {
         label: "Bad",
-        data: 20
+        data: 20,
+        color: "#fabf98"
     }];
 
     var plotObj = $.plot($("#flot-pie-chart"), data, {
