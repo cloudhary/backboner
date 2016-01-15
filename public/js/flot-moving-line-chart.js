@@ -329,7 +329,7 @@ $(function() {
 
         while (data.length < maximum) {
             var previous = data.length ? data[data.length - 1] : 50;
-            var y = Math.abs(upper1) + Math.abs(upper2);
+            var y = Math.abs(shoulder_left) + Math.abs(shoulder_right);
             data.push(y < 0 ? 0 : y > SENSOR_MAX ? SENSOR_MAX : y);
         }
 

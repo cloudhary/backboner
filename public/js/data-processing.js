@@ -2,7 +2,7 @@ var socket = io();
 
 var instances = 0;
 var x1, y1, z1, x2, y2, z2;
-var lower1, lower2, upper1, upper2, shoulder1, shoulder2;
+var lower1, lower2, upper1, upper2, shoulder_left, shoulder_right;
 var SENSOR_MAX = 0.4;
 
 // create function to calculate weighted average of a list of data
