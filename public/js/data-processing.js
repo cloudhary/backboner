@@ -31,11 +31,11 @@ socket.on('new message', function (data) {
                      + Math.abs(lower1) + Math.abs(lower2)
                      + Math.abs(shoulder_left) + Math.abs(shoulder_right);
     total_average_percentage/=3;
-    if (total_average_percentage < 0.03) {
+    if (total_average_percentage < 0.025) {
         great += 1;
-    } else if (total_average_percentage < 0.07) {
+    } else if (total_average_percentage < 0.05) {
         good += 1;
-    } else if (total_average_percentage < 0.15) {
+    } else if (total_average_percentage < 0.075) {
         meh += 1;
     } else {
         bad += 1;
