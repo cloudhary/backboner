@@ -14,7 +14,17 @@ server.listen(port, function () {
 // Routing
 app.use(express.static(__dirname + '/public'));
 
-// Chatroom
+// Getting information from webhook
+var counter = 0;
+app.post('/brace', function (req, res) {
+  res.send('Thank you for the information for the ', counter, 'th time');
+  counter += 1;
+  console.log("Something!", counter);
+  io.emit('new message', {
+    username: "The man himself",
+    message: req.body
+  });
+});
 
 // usernames which are currently connected to the chat
 var usernames = {};
