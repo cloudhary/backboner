@@ -379,7 +379,7 @@
 
         socket.on('new message', function (data) {
 
-            console.log("Data received from server through socket connection");
+            console.log("Data: ", data);
             instances += 1;
 
             var current_array = data.split(";");
