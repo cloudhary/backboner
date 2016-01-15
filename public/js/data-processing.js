@@ -17,7 +17,7 @@ socket.on('new message', function (data) {
     instances += 1;
 
     var current_array = data.message.split(",");
-    lower1 = parseFloat(current_array[6 - 6]);
+    lower1 = parseFloat(current_array[7- 6]);
     lower2 = parseFloat(current_array[7- 6]);
     upper1 = parseFloat(current_array[8 - 6]);
     upper2 = parseFloat(current_array[9 - 6]);
