@@ -3,7 +3,7 @@ $(function() {
 
     var data = [{
         label: "Great",
-        data: 1
+        data: counter
     }, {
         label: "Good",
         data: 3

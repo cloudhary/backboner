@@ -372,8 +372,10 @@
     <script src="/socket.io/socket.io.js"></script>
     <script language="javascript">
         var socket = io();
+        var counter = 0;
         socket.on('new message', function (data) {
             console.log(data);
+            counter += 1;
         });
         </script>
 </body>
