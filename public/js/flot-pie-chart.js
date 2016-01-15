@@ -3,19 +3,19 @@ $(function() {
 
     var data = [{
         label: "Great",
-        data: instances,
+        data: great,
         color: "#a1d490"
     }, {
         label: "Good",
-        data: 3,
+        data: good,
         color: "#acff47"
     }, {
         label: "Meh",
-        data: 9,
+        data: meh,
         color: "#faf798"
     }, {
         label: "Bad",
-        data: 20,
+        data: bad,
         color: "#fabf98"
     }];
 
@@ -40,10 +40,12 @@ $(function() {
     });
     // Update the random dataset at 25FPS for a smoothly-animating chart
 
-    // setInterval(function updateRandom() {
-    //     data[0].data = instances;
-    //     plotObj.setData(data);
-    //     plotObj.draw();
-    //     console.log(data[0].data);
-    // }, 500);
+    $("#flot-pie-chart").on("custom", function updateRandom(event) {
+        data[0].data = great;
+        data[1].data = good;
+        data[2].data = meh;
+        data[3].data = bad;
+        plotObj.setData(data);
+        plotObj.draw();
+    });
 });

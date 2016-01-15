@@ -7,11 +7,10 @@ var SENSOR_MAX = 0.15;
 var SHOULDER_SENSOR_MAX = 0.15;
 var LOWER_BACK_SENSOR_MAX = 0.15;
 var UPPER_BACK_SENSOR_MAX = 0.15;
-var great, good, meh, bad;
-// create function to calculate weighted average of a list of data
-// function getAvg(data, weights) {
-//     for 
-// }
+var great = 0;
+var good = 0;
+var meh = 0; 
+var bad = 0;
 
 socket.on('new message', function (data) {
 
@@ -27,7 +26,17 @@ socket.on('new message', function (data) {
     x1 = parseFloat(current_array[0+6]);
     y1 = parseFloat(current_array[1+6]);
     z1 = parseFloat(current_array[2+6]);
-    console.log("IMU data - x: ", x1, "y: ", y1, "z: ", z1);
 
+    var total_average_percentage = (lower1 + lower2 + upper1 + upper2 + 
+                                        shoulder_right + shoulder_left) / 6;
+    if (total_average_percentage < 0.03) {
+        great += 1;
+    } else if (total_average_percentage < 0.07) {
+        good += 1;
+    } else if (total_average_percentage < 0.15) {
+        meh += 1;
+    } else {
+        bad += 1;
+    }
     $("*").trigger("custom"); // for all on screen objects to receive their
 });
