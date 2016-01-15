@@ -372,10 +372,32 @@
     <script src="/socket.io/socket.io.js"></script>
     <script language="javascript">
         var socket = io();
-        var counter = 0;
+
+        var instances = 0;
+        var x1, y1, z1, x2, y2, z2;
+        var lower1, lower2, upper1, upper2, shoulder1, shoulder2;
+
         socket.on('new message', function (data) {
-            console.log(data);
-            counter += 1;
+
+            console.log("Data received from server through socket connection");
+            insstances += 1;
+
+            var current_array = data.split(";");
+            x1 = parseFloat(current_array[0]);
+            y1 = parseFloat(current_array[1]);
+            z1 = parseFloat(current_array[2]);
+            console.log(x1, y1, z1);
+            //x2 = parseFloat(current_array[3]);
+            // y2 = parseFloat(current_array[4]);
+            // z2 = parseFloat(current_array[5]);
+            // lower1 = parseFloat(current_array[6]);
+            // lower2 = parseFloat(current_array[7]);
+            // upper1 = parseFloat(current_array[8]);
+            // upper2 = parseFloat(current_array[9]);
+            // shoulder1 = parseFloat(current_array[10]);
+            // shoulder2 = parseFloat(current_array[11]);
+
+            $("*").trigger("custom"); // for all on screen objects to receive their
         });
         </script>
 </body>

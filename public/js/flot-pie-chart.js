@@ -3,7 +3,7 @@ $(function() {
 
     var data = [{
         label: "Great",
-        data: counter
+        data: instances
     }, {
         label: "Good",
         data: 3
@@ -36,10 +36,10 @@ $(function() {
     });
     // Update the random dataset at 25FPS for a smoothly-animating chart
 
-    setInterval(function updateRandom() {
-        data[0].data = counter;
-        plotObj.setData(data);
-        plotObj.draw();
-        console.log(data[0].data);
-    }, 500);
+    // setInterval(function updateRandom() {
+    //     data[0].data = instances;
+    //     plotObj.setData(data);
+    //     plotObj.draw();
+    //     console.log(data[0].data);
+    // }, 500);
 });

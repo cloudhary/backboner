@@ -1,4 +1,4 @@
-//Flot Moving Line Chart
+//Live posture tracking
 $(function() {
 
     var container = $("#flot-line-chart-live");
@@ -8,10 +8,7 @@ $(function() {
 
     var maximum = container.outerWidth() / 2 || 300;
 
-    //
-
     var data = [];
-    console.log("flot moving line chart");
 
     function getRandomData() {
 
@@ -34,70 +31,6 @@ $(function() {
 
         return res;
     }
-    
-    //
-    
-    function getColorFromData(data) {
-        var val;
-        var res = [];
-        var r;
-        var g;
-        var b;
-        for (var i = 0; i < data.length; ++i) {
-            val = data[i][1];
-            // RED
-            r = 255;
-            g = 143;
-            b = 143;
-            val = Math.abs(val);
-            if (val < 0.05) {
-                // GREEN
-                r = 161;
-                g = 212;
-                b = 144;
-            }
-            else if (val < 0.1) {
-                // YELLOW
-                r = 232;
-                g = 232;
-                b = 255;
-            }
-            res.push("rgba(" + r.toString() + ", " + g.toString() + ", " + b.toString() + ", 0.2)");
-        }
-        return res;
-    }
-    
-    //
-    
-    function getColor(val) {
-        var r;
-        var g;
-        var b;
-        var color = "#f5a2a2";
-        // RED
-        r = 255;
-        g = 143;
-        b = 143;
-        val = Math.abs(val);
-        if (val < 5) {
-            // GREEN
-            r = 161;
-            g = 212;
-            b = 144;
-            color = "#cbf5a2";
-        }
-        else if (val < 15) {
-            // YELLOW
-            r = 232;
-            g = 232;
-            b = 255;
-            color = "#fff700";
-        }
-        //var res = "rgba(" + r.toString() + ", " + g.toString() + ", " + b.toString() + ", 0.2)");
-        return color;
-    }
-    
-    //
 
     series = [{
         data: getRandomData(),
@@ -146,21 +79,38 @@ $(function() {
             max: 100
         },
         legend: {
-            show: true
+            show: true,
+            //show or hide legend
+            labelFormatter: null, // or (fn: string, series object -> string)
+            //formatting your legend label by using custom functions
+            // labelBoxBorderColor: color
+            //label border color
+            noColumns: 3,
+            //number of legend columns
+            position: "ne"
+            //legend position (north east, north west, south east, south west)
+            // margin: number of pixels or [x margin, y margin]
+            // backgroundColor: null or color
+            // backgroundOpacity: number between 0 and 1
+            // container: null or jQuery object/DOM element/jQuery expression        
         }
     });
 
     // Update the random dataset at 25FPS for a smoothly-animating chart
 
-    setInterval(function updateRandom() {
+    // setInterval(function updateRandom() {
+    //     series[0].data = getRandomData();
+    //     plot.setData(series);
+    //     plot.draw();
+    // }, 50);
+    container.on("custom", function updateRandom(event) {
         series[0].data = getRandomData();
         plot.setData(series);
         plot.draw();
-    }, 50);
-
+    });
 });
 
-//Flot Moving Line Chart
+//Upper back tracking
 $(function() {
 
     var container = $("#flot-line-chart-upper");
@@ -251,15 +201,15 @@ $(function() {
 
     // Update the random dataset at 25FPS for a smoothly-animating chart
 
-    setInterval(function updateRandom() {
+    container.on("custom", function updateRandom(event) {
         series[0].data = getRandomData();
         plot.setData(series);
         plot.draw();
-    }, 50);
+    });
 
 });
 
-//Flot Moving Line Chart
+//Lower back tracking
 $(function() {
 
     var container = $("#flot-line-chart-lower");
@@ -350,15 +300,15 @@ $(function() {
 
     // Update the random dataset at 25FPS for a smoothly-animating chart
 
-    setInterval(function updateRandom() {
+    container.on("custom", function updateRandom(event) {
         series[0].data = getRandomData();
         plot.setData(series);
         plot.draw();
-    }, 50);
+    });
 
 });
 
-//Flot Moving Line Chart
+//Shoulder tracking
 $(function() {
 
     var container = $("#flot-line-chart-shoulder");
@@ -448,10 +398,10 @@ $(function() {
 
     // Update the random dataset at 25FPS for a smoothly-animating chart
 
-    setInterval(function updateRandom() {
+    container.on("custom", function updateRandom(event) {
         series[0].data = getRandomData();
         plot.setData(series);
         plot.draw();
-    }, 50);
+    });
 
 });
