@@ -34,5 +34,10 @@ $(function() {
             defaultTheme: false
         }
     });
+    // Update the random dataset at 25FPS for a smoothly-animating chart
 
+    setInterval(function updateRandom() {
+        plotObj.draw();
+        console.log(data[0].data);
+    }, 500);
 });
