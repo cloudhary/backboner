@@ -322,6 +322,13 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script language="javascript">
+        var socket = io();
+        socket.on('new message', function (data) {
+            console.log(data);
+        });
+        </script>
 </body>
 
 </html>
