@@ -24,11 +24,9 @@ app.post('/brace', function (req, res) {
   res.send(counter);
   io.emit('new message', {
     username: "The man himself",
-    message: counter
+    message: req.body.data
   });
   counter += 1;
-  // console.log("A!", req);
-  console.log("B!", req.body);
 });
 
 // usernames which are currently connected to the chat
