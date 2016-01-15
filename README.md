@@ -1,25 +1,15 @@
 
-# Socket.IO Chat
+# Backboner
 
-A simple chat demo for socket.io
+Have you ever felt like your back hurts after working on a coding assignment for too long? Afraid that you might injure yourself doing deadlifts because of bad posture? 
 
-## How to use
+Think Fitbit, but for your back. Go through your day wearing the brace and rest assured that we've got your back!
 
-```
-$ cd socket.io
-$ npm install
-$ cd examples/chat
-$ npm install
-$ node .
-```
+## How does it work?
+The brace is equipped with 6 flex sensors and 2 IMUs and measures your posture on a regular interval of 6 seconds. Information is logged by the Particle Photon board that then gets sent to the web app for the user to view.
 
-And point your browser to `http://localhost:3000`. Optionally, specify
-a port by supplying the `PORT` env variable.
+## Why this?
+Bad posture plagues our modern world. People are rarely watching for their posture as they go about their daily activities, but many complain later in their lives of the pain that results. What does it mean to be doing that?
 
-## Features
-
-- Multiple users can join a chat room by each entering a unique username
-on website load.
-- Users can type chat messages to the chat room.
-- A notification is sent to all users when a user joins or leaves
-the chatroom.
+### Acknowledgements
+Built for the Carnegie Mellon's Build18 hackathon by Ben Yates, Nikhil Choudhary, Omkar Kelkar, Raghav Goyal

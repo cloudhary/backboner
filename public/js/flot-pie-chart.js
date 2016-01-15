@@ -2,16 +2,16 @@
 $(function() {
 
     var data = [{
-        label: "Series 0",
+        label: "Great",
         data: 1
     }, {
-        label: "Series 1",
+        label: "Good",
         data: 3
     }, {
-        label: "Series 2",
+        label: "Meh",
         data: 9
     }, {
-        label: "Series 3",
+        label: "Bad",
         data: 20
     }];
 
