@@ -4,7 +4,7 @@ $(function() {
     var data = [{
         label: "Great",
         data: great,
-        color: "#a1d490"
+        color: "#1dfa00"
     }, {
         label: "Good",
         data: good,
