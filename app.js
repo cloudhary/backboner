@@ -21,13 +21,11 @@ app.use(express.static(__dirname + '/public'));
 // Getting information from webhook
 var counter = 0;
 app.post('/brace', function (req, res) {
-  res.send(counter);
   io.emit('new message', {
     username: "God",
     message: req.body.DATA
   });
   counter += 1;
-  console.log("Nathan", req.body.DATA);
 });
 
 // usernames which are currently connected to the chat
