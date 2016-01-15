@@ -379,10 +379,10 @@
 
         socket.on('new message', function (data) {
 
-            console.log("Data: ", data);
+            console.log("Data received: ", data);
             instances += 1;
 
-            var current_array = data.split(";");
+            var current_array = data.message.split(";");
             x1 = parseFloat(current_array[0]);
             y1 = parseFloat(current_array[1]);
             z1 = parseFloat(current_array[2]);
