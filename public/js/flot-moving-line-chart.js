@@ -191,7 +191,7 @@ $(function() {
         },
         yaxis: {
             min: 0,
-            max: 100
+            max: SENSOR_MAX
         },
         legend: {
             show: true
